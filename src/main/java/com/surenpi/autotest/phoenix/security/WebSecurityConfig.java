@@ -34,7 +34,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-            .antMatchers("/", "/crud").permitAll()
+            .antMatchers("/", "/crud", "/users").permitAll()
             .anyRequest().authenticated()
             .and()
             .formLogin()
@@ -49,6 +49,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
             .withUser("user").password("password").roles("USER");
+    }
+
+    @Autowired
+    public void configureDbAuth(AuthenticationManagerBuilder auth) throws Exception
+    {
+//        auth.userDetailsService()
     }
 
     private Filter ssoFilter()

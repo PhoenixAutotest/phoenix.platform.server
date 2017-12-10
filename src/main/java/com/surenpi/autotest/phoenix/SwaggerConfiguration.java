@@ -28,10 +28,10 @@ public class SwaggerConfiguration
     private ApiInfo apiInfo()
     {
         return new ApiInfoBuilder()
-                .title("swagger-bootstrap-ui RESTful APIs")
-                .description("swagger-bootstrap-ui")
+                .title("自动化测试平台")
+                .description("自动化测试平台")
                 .termsOfServiceUrl("http://localhost:8999/")
-                .contact("developer@mail.com")
+                .contact("zxjlwt@126.com")
                 .version("1.0")
                 .build();
     }
